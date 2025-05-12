@@ -20,5 +20,5 @@ RUN pip install --upgrade pip && \
 
 EXPOSE 8080
 
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"]
+
